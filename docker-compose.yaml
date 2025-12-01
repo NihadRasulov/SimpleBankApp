@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  product_service:
+    image: postgres:15
+    container_name: product_db
+    restart: always
+    environment:
+      POSTGRES_USER: productDB
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: productDB
+    ports:
+      - "5433:5432"
+
+  card_service:
+    image: postgres:15
+    container_name: card_db
+    restart: always
+    environment:
+      POSTGRES_USER: cardDB
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: cardDB
+    ports:
+      - "5434:5432"
+
+
+
+  redis:
+    image: redis:latest
+    container_name: Redis_container
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data: {}
+  redis_data: {}
+

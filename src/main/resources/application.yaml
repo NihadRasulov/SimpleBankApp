@@ -1,0 +1,43 @@
+spring:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  productDB:
+    datasource:
+      url: jdbc:postgresql://localhost:5433/productDB
+      username: productDB
+      password: root
+      driver-class-name: org.postgresql.Driver
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  cardDB:
+    datasource:
+      url: jdbc:postgresql://localhost:5434/cardDB
+      username: cardDB
+      password: root
+      driver-class-name: org.postgresql.Driver
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+
+
+server:
+  port: 8081
+
+cloudinary:
+  cloud_name: drpdpl5bt
+  api_key: 829315383167681
+  api_secret: 9L2OwRv2rMhfjipI8Sbw4x-ndgg
